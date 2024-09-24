@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Streamer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Your Video Library</h1>
+  <div id="video-list">
+    <!-- This is where the video titles will be dynamically added -->
+  </div>
+  
+  <div id="video-player">
+    <video id="player" controls width="640" height="360">
+      <source id="video-source" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
