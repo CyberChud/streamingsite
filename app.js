@@ -1,13 +1,13 @@
 // Initialize the Amazon Cognito credentials provider
 AWS.config.region = 'your-region'; // Region of your S3 bucket
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-  IdentityPoolId: 'your-identity-pool-id', // Your Identity Pool ID
+  IdentityPoolId: 'us-east-2:db73b458-1f18-4201-b105-4339d29caf3a', // Your Identity Pool ID
 });
 
 // Create S3 service object
 var s3 = new AWS.S3({
   apiVersion: '2006-03-01',
-  params: { Bucket: 'your-bucket-name' } // Your S3 Bucket name
+  params: { Bucket: 'zzvideo-media' } // Your S3 Bucket name
 });
 
 // Function to fetch and display the video list
@@ -32,7 +32,7 @@ function listVideos() {
 
 // Function to generate signed URL and play the video
 function playVideo(videoKey) {
-  var params = { Bucket: 'your-bucket-name', Key: videoKey };
+  var params = { Bucket: 'zzvideo-media', Key: videoKey };
   s3.getSignedUrl('getObject', params, function (err, url) {
     if (err) {
       console.log("Error", err);
